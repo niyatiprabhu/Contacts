@@ -1,43 +1,47 @@
-<androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cvRoot"
-    android:layout_marginLeft="@dimen/grid_margin"
-    android:layout_marginRight="@dimen/grid_margin"
-    android:layout_marginTop="@dimen/cell_margin"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/grid_margin"
+    android:layout_marginTop="@dimen/cell_margin"
+    android:layout_marginRight="@dimen/grid_margin"
     android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
     card_view:cardCornerRadius="@dimen/card_corner_radius"
     card_view:cardElevation="@dimen/card_elevation">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/ivProfile"
+            android:transitionName="profile"
             android:layout_width="match_parent"
             android:layout_height="@dimen/grid_profile_height"
             android:scaleType="centerCrop" />
 
         <RelativeLayout
-            android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/palette_height">
+            android:layout_height="@dimen/palette_height"
+            android:layout_alignParentBottom="true">
 
             <View
                 android:id="@+id/vPalette"
+                android:transitionName="profile"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
             <TextView
                 android:id="@+id/tvName"
+                android:transitionName="profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textSize="@dimen/contact_text_size"
-                android:textColor="@android:color/black" />
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/contact_text_size" />
         </RelativeLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
